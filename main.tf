@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     docker = {
-      source = "terraform-provider-docker/docker"
+      source  = "kreuzwerker/docker"
       version = "~> 3.0"
     }
   }
@@ -18,6 +18,6 @@ resource "docker_container" "nginx_container" {
   image = docker_image.nginx_image.image_id
   ports {
     internal = 80
-    external = 8080
+    external = 8081
   }
 }
